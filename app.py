@@ -2,6 +2,35 @@
 
 #Import the random class
 import random
+
+def menu():
+    """Controlling method that
+    1. Ask players for numbers
+    2. Calculate the lottery numbers
+    3. Print out the winnings
+    """
+    players_numbers = get_players_numbers()
+    lottery_numbers = create_lottery_numbers()
+    if len(players_numbers.intersection(lottery_numbers)) == 1:
+        print("Congratulations, you have won 10 Euro!!!")
+    elif len(players_numbers.intersection(lottery_numbers)) == 2:
+        print("Congratulations, you have won 20 Euro!!!")
+    elif len(players_numbers.intersection(lottery_numbers)) == 3:
+        print("Congratulations, you have won 30 Euro!!!")
+    elif len(players_numbers.intersection(lottery_numbers)) == 4:
+        print("Congratulations, you have won 40 Euro!!!")
+    elif len(players_numbers.intersection(lottery_numbers)) == 5:
+        print("Congratulations, you have won 50 Euro!!!")
+    elif len(players_numbers.intersection(lottery_numbers)) == 6:
+        print("Congratulations, you have won it all!!!")
+    else:
+        print("Sorry, you have won nothing!!!")
+
+
+
+
+
+
 #Get the Lottery numbers
 def get_players_numbers():
     numbers = str( raw_input("Enter the numbers separated by commas: "))
@@ -21,5 +50,6 @@ def create_lottery_numbers():
 
 
 
-print(get_players_numbers())
-print(create_lottery_numbers())
+
+if __name__ == "__main__":
+    menu()
